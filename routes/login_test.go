@@ -331,7 +331,7 @@ func (suite *LoginHandlerTestSuite) TestGetOidcLoginCallback_Success() {
 }
 
 func (suite *LoginHandlerTestSuite) TestGetOidcLoginCallback_Success_CreateUser() {
-	suite.Cfg.Security.AllowSignup = true
+	suite.Cfg.Security.OidcAllowSignup = true
 
 	url := suite.authorizeUser(suite.OidcUserNew)
 	r := httptest.NewRequest(http.MethodGet, url, nil)
